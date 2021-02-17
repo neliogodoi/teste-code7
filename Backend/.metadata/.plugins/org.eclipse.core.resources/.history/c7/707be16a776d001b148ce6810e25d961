@@ -1,0 +1,29 @@
+package com.teste.neliogodoi.fullstack.controller;
+
+import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.teste.neliogodoi.fullstack.service.UserService;
+
+import lombok.RequiredArgsConstructor;
+
+@Service
+@RestController("usuario")
+@RequiredArgsConstructor
+public class UserController {
+	
+	private UserService userService;
+	
+	@GetMapping("{user}")
+	public String findUser(@PathVariable Long user) {
+		return this.userService.findUser(user);
+	}
+	
+	@GetMapping
+	public String findUser() {
+		return this.userService.findUser();
+	}
+	
+}

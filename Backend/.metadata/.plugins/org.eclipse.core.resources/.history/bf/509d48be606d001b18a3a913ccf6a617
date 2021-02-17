@@ -1,0 +1,29 @@
+package com.teste.neliogodoi.fullstack.model;
+
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+@Document(collection = "divida")
+public class Debt {
+	
+	@Id
+	private String id;
+	
+	private long idUser;
+	
+	private String motivo;
+	
+	private Double valor;
+	
+	private long data;
+	
+}

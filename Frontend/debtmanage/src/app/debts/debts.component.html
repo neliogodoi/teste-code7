@@ -1,0 +1,40 @@
+<mat-card class="mat-elevation-z3">
+	<form [formGroup]="form" (ngSubmit)="onSubmit()">
+		<div class="d-flex flex-column justify-content-center align-items-center container-form">
+			<div class="full-width">
+				<mat-form-field appearance="fill" class="full-width">
+					<mat-label>Selecione um Usuário</mat-label>
+					<mat-select [(ngModel)]="debt.idUser" formControlName="user">
+						<mat-option>None</mat-option>
+						<mat-option *ngFor="let user of users" [value]="user.id">{{user.name}}</mat-option>
+					</mat-select>
+				</mat-form-field>
+			</div>
+			<div class="full-width">
+				<mat-form-field class="full-width">
+					<mat-label>Motivo</mat-label>
+					<input [(ngModel)]="debt.motivo" formControlName="motivo" matInput placeholder="Ex. Fatura do cartão de crédito">
+				</mat-form-field>
+			</div>
+			<div class="full-width">
+				<mat-form-field class="full-width">
+					<mat-label>Valor</mat-label>
+					<input [(ngModel)]="debt.valor" formControlName="valor" matInput placeholder="0,01" type="number" step="0.01">
+				</mat-form-field>
+			</div>
+			<div class="full-width">
+				<mat-form-field appearance="fill" class="full-width">
+					<mat-label>Data</mat-label>
+					<input [ngModel]="dataParse(debt.data)" formControlName="data" matInput [matDatepicker]="picker">
+					<mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+					<mat-datepicker #picker></mat-datepicker>
+				</mat-form-field>
+			</div>
+			<div class="full-width">
+				<button mat-raised-button (click)="cancelar()">Cancelar</button>
+				<button *ngIf="debt.id !== undefined" mat-raised-button (click)="deleteDebt()" color="warn">Excluir</button>
+				<button mat-raised-button color="primary">Salvar</button>
+			</div>
+		</div>
+	</form>
+</mat-card>

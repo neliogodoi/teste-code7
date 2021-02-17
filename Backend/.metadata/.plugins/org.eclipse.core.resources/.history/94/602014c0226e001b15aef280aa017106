@@ -1,0 +1,29 @@
+package com.teste.neliogodoi.fullstack.testes;
+
+import org.junit.BeforeClass;
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.setup.MockMvcBuilders;
+
+import com.teste.neliogodoi.fullstack.security.WebSecurityConfig;
+
+@SpringBootTest
+public class TestingApp {
+	
+	@Autowired
+	private MockMvc mockMvc;
+	
+	@BeforeClass
+	public void setup(){
+	    mockMvc = MockMvcBuilders
+	                .webAppContextSetup(wac)
+	                .apply(springSecurity())
+	                .build();
+	}
+	
+	@Test
+	public void contextLoads() throws Exception {
+	}
+}

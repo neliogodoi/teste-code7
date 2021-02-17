@@ -1,0 +1,17 @@
+package com.teste.neliogodoi.fullstack.model;
+
+public class UserProxy implements IUser {
+
+	@Override
+	public String getUser(long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String getAllUsers() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

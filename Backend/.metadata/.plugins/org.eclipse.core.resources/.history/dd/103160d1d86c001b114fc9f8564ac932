@@ -1,0 +1,6 @@
+package com.teste.neliogodoi.fullstack.Provider;
+
+public interface IUser {
+	public Object getUser(long id);
+	public Object getAllUsers();
+}

@@ -1,0 +1,29 @@
+package com.teste.neliogodoi.fullstack.security;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Repository;
+
+import com.neliogodoi.solodigital.dao.UsuarioDAO;
+import com.neliogodoi.solodigital.model.Usuario;
+import com.teste.neliogodoi.fullstack.model.SysUser;
+import com.teste.neliogodoi.fullstack.repository.SysUserRepository;
+
+@Repository
+public class ImplementationUserDetailsService implements UserDetailsService {
+	
+	@Autowired
+	private SysUserRepository dao;
+	
+	@Override
+	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+		SysUser user = this.dao.findByUsername(username);
+		if(user == null) {
+			throw new UsernameNotFoundException("Usuario não encontrado");
+		}
+		return user;
+	}
+
+}

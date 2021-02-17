@@ -1,0 +1,10 @@
+package com.teste.neliogodoi.fullstack.model;
+
+import com.teste.neliogodoi.fullstack.provider.UserProvider;
+
+@FeignClient("")
+public interface UserService  {
+	
+	String findUser(Long id);
+	
+}

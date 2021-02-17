@@ -1,0 +1,13 @@
+
+spring.data.mongodb.database=testefullstack
+spring.data.mongodb.repositories.enabled=true
+spring.data.mongodb.uri=mongodb://127.0.0.1:27017/testefullstack
+
+spring.data.mongodb.password= passwd
+spring.data.mongodb.username= user
+
+#Server port
+server.port=80
+
+# Logging
+logging.file.name=testefullstack.log

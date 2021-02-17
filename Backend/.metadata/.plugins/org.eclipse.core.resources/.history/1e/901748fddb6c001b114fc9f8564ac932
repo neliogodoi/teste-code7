@@ -1,0 +1,100 @@
+package com.teste.neliogodoi.fullstack.Provider;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+
+
+public class UserProvider {
+	
+	private String host = "https://jsonplaceholder.typicode.com/users";
+	
+	
+	public UserProvider() {}
+
+	public String requestUser(long id){
+		
+		HttpURLConnection http = null;
+		
+		try {
+			URL url = new URL(String.format("%s/%d",host, id));
+			http = (HttpURLConnection) url.openConnection();
+			http.setRequestMethod("GET");
+	        http.setRequestProperty("Content-length", "0");
+	        http.setUseCaches(false);
+	        http.setAllowUserInteraction(false);
+	        http.connect();
+	        int status = http.getResponseCode();
+
+	        switch (status) {
+	            case 200:
+	            case 201:
+	                BufferedReader br = new BufferedReader(new InputStreamReader(http.getInputStream()));
+	                StringBuilder sb = new StringBuilder();
+	                String line;
+	                while ((line = br.readLine()) != null) {
+	                    sb.append(line+"\n");
+	                }
+	                br.close();
+	                return sb.toString();
+	        }			
+		} catch (IOException ex) {
+			ex.printStackTrace();
+		} finally {
+	       if (http != null) {
+	           try {
+	               http.disconnect();
+	           } catch (Exception ex) {
+	        	   ex.printStackTrace();
+	           }
+	        }
+	     }
+		
+		return null;
+	}
+
+
+	public String requestAllUsers() {
+		
+		HttpURLConnection http = null;
+		
+		try {
+			URL url = new URL(host);
+			http = (HttpURLConnection) url.openConnection();
+			http.setRequestMethod("GET");
+	        http.setRequestProperty("Content-length", "0");
+	        http.setUseCaches(false);
+	        http.setAllowUserInteraction(false);
+	        http.connect();
+	        int status = http.getResponseCode();
+
+	        switch (status) {
+	            case 200:
+	            case 201:
+	                BufferedReader br = new BufferedReader(new InputStreamReader(http.getInputStream()));
+	                StringBuilder sb = new StringBuilder();
+	                String line;
+	                while ((line = br.readLine()) != null) {
+	                    sb.append(line+"\n");
+	                }
+	                br.close();
+	                return sb.toString();
+	        }			
+		} catch (IOException ex) {
+			ex.printStackTrace();
+		} finally {
+	       if (http != null) {
+	           try {
+	               http.disconnect();
+	           } catch (Exception ex) {
+	        	   ex.printStackTrace();
+	           }
+	        }
+	     }
+		
+		return null;
+	}
+
+}

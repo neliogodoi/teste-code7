@@ -1,0 +1,30 @@
+package com.teste.neliogodoi.fullstack.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.teste.neliogodoi.fullstack.service.UserService;
+
+@Service
+@RestController("usuario")
+public class UserController {
+	
+	@Autowired
+	private UserService userService;
+
+	public UserController() {}
+	
+	@GetMapping("{id}")
+	public String findUser(@PathVariable Long id) {
+		return this.userService.findUser(id);
+	}
+	
+	@GetMapping
+	public String findUser() {
+		return this.userService.findUser();
+	}
+	
+}

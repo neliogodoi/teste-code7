@@ -1,0 +1,5 @@
+package com.teste.neliogodoi.fullstack.controller;
+
+public class UserRestController {
+
+}

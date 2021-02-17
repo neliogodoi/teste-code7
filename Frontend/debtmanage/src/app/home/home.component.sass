@@ -1,0 +1,44 @@
+mat-drawer-container
+    width: 100%
+    height: 100%
+
+mat-drawer
+    width: 20%
+
+mat-drawer-content
+    width: 100%
+    padding: 20px
+
+.container-btn
+    width: 20%
+    margin-bottom: 40px
+    button
+        width: 100%
+
+h4
+    color: #868686
+
+.item-list:hover
+    background: #e6e6e6b7
+
+.column
+    width: 40%
+
+.spacer
+    flex: 1 1 auto
+
+.float-btn
+    position: fixed
+    bottom: 15px
+    right: 15px
+    z-index: 100
+
+$small: 420px
+$medium: 780px
+
+@media screen and ( max-width: $small )
+    .column
+        width: 100%
+
+    mat-drawer
+        width: 70%

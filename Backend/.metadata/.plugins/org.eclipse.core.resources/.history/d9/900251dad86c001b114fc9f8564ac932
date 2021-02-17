@@ -1,0 +1,17 @@
+package com.teste.neliogodoi.fullstack.Provider;
+
+public class UserProvider implements IUser {
+
+	@Override
+	public Object getUser(long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Object getAllUsers() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

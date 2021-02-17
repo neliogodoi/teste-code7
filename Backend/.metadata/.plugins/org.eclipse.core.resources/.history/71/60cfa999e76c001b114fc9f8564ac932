@@ -1,0 +1,27 @@
+package com.neliogodoi.solodigital.security;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Repository;
+
+import com.neliogodoi.solodigital.dao.UsuarioDAO;
+import com.neliogodoi.solodigital.model.Usuario;
+
+@Repository
+public class ImplementationUserDetailsService implements UserDetailsService {
+	
+	@Autowired
+	private UsuarioDAO dao;
+	
+	@Override
+	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+		SysUser user = this.dao.findByUsername(username);
+		if(user == null) {
+			throw new UsernameNotFoundException("Usuario não encontrado");
+		}
+		return user;
+	}
+
+}

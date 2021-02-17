@@ -1,0 +1,11 @@
+package com.teste.neliogodoi.fullstack.repository;
+
+import java.util.List;
+
+import org.springframework.data.mongodb.repository.MongoRepository;
+
+import com.teste.neliogodoi.fullstack.model.Divida;
+
+public interface  DividaRepository extends MongoRepository<Divida, long> {
+	List<Divida> findDividasByIdUser(long);
+}

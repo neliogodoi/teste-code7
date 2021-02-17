@@ -1,0 +1,8 @@
+package com.teste.neliogodoi.fullstack.testes;
+
+@SpringBootTest
+public class TestingTestDocsApp {
+	@Test
+	public void contextLoads() throws Exception {
+	}
+}

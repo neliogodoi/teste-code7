@@ -1,0 +1,25 @@
+package com.teste.neliogodoi.fullstack.model;
+
+import com.teste.neliogodoi.fullstack.Provider.UserProvider;
+
+public class UserProxy implements IUser {
+	
+	private UserProvider userProvider;
+	
+	UserProxy(UserProvider userProvider){
+		this.userProvider = userProvider;
+	}
+
+	@Override
+	public String getUser(long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String getAllUsers() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

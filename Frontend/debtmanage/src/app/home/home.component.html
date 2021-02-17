@@ -1,0 +1,48 @@
+<mat-toolbar color="primary">
+	<button mat-icon-button aria-label="Botao de icone 'menu'" (click)="toogleNavside()">
+		<mat-icon>menu</mat-icon>
+	</button>
+	<span>Dividas de Usuários</span>
+	<span class="spacer"></span>
+</mat-toolbar>
+
+<button class="float-btn" mat-fab color="primary" aria-label="botao adicionar divida" (click)="novaDivida()">
+	<mat-icon>add</mat-icon>
+  </button>
+
+<mat-drawer-container>
+	<mat-drawer mode="side" [opened]="mostrarNavside">
+		<mat-list *ngIf="devedores !== undefined">
+			<div mat-subheader>Devedores</div>
+			<mat-list-item class="item-list" *ngFor="let devedor of devedores" (click)="listarDividasDeUsuario(devedor.user)">
+				<mat-icon mat-list-icon color="primary">paid</mat-icon>
+				<div mat-line>{{devedor.nome}}</div>
+				<div mat-line>R$ {{devedor.debtValue.toFixed(2)}} </div>
+				<mat-divider></mat-divider>
+			</mat-list-item>
+		</mat-list>
+		<p *ngIf="devedores === undefined">
+			<mat-icon mat-list-icon color="primary">paid</mat-icon>
+		</p>
+	</mat-drawer>
+	<mat-drawer-content>
+		<div class="d-flex" style="width: 100%;">
+			<div *ngIf="mostrarListaDebts" class="column">
+				<h2>{{devedor.nome}}</h2>
+				<h4>Total: R$ {{devedor.debtValue.toFixed(2)}}</h4>
+				<mat-list>
+					<mat-list-item class="item-list"  *ngFor="let divida of dividas" (click)="verInformacoesDeDivida(divida.id)">
+						<mat-icon mat-list-icon color="primary">paid</mat-icon>
+						<div mat-line>{{divida.motivo}}</div>
+						<div mat-line>R$ {{divida.valor.toFixed(2)}} </div>
+						<div mat-line>{{parseData(divida.data)}} </div>
+						<mat-divider></mat-divider>
+					</mat-list-item>
+				</mat-list>
+			</div>
+			<div *ngIf="mostrarAppDebts" class="column">
+				<app-debts [debt]="divida" [users]="usuarios" (evento)="onChange($event)"></app-debts>
+			</div>
+		</div>
+	</mat-drawer-content>
+</mat-drawer-container>

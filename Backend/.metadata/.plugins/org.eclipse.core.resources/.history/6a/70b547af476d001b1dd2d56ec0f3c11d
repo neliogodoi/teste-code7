@@ -1,0 +1,22 @@
+package com.teste.neliogodoi.fullstack.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PathVariable;
+
+import com.teste.neliogodoi.fullstack.service.UserService;
+
+@Service
+public class UserController {
+	
+	@Autowired
+	private UserService userService;
+
+	public UserController() {}
+	
+	public ResponseEntity findUser(@PathVariable Long id) {
+		return this.userService.findUser(id);
+	}
+	
+}

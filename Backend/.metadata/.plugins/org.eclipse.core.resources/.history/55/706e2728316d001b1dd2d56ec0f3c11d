@@ -1,0 +1,16 @@
+package com.teste.neliogodoi.fullstack.controller;
+
+import java.util.List;
+
+import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.teste.neliogodoi.fullstack.model.Divida;
+
+@Service
+@RestController("sysuser")
+public class SysUserRestController extends MongoRepository<SysUser, String> {
+	List<Divida> findDividaByIdUser(Long id);
+}
+

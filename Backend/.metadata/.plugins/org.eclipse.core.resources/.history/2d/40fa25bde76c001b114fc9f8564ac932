@@ -1,0 +1,9 @@
+package com.teste.neliogodoi.fullstack.repository;
+
+import org.springframework.data.mongodb.repository.MongoRepository;
+import com.teste.neliogodoi.fullstack.model.SysUser;;
+
+
+public interface SysUserRepository extends MongoRepository<SysUser, String>  {
+
+}

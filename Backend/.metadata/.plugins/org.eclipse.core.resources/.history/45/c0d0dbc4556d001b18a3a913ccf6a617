@@ -1,0 +1,34 @@
+package com.teste.neliogodoi.fullstack.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.teste.neliogodoi.fullstack.model.SysUser;
+import com.teste.neliogodoi.fullstack.repository.SysUserRepository;
+
+@Service
+@RestController("sysuser")
+public class SysUserController {
+	
+	@Autowired
+	private SysUserRepository repository;
+	
+	public SysUserController() {}
+	
+	@PostMapping("novo")
+	public ResponseEntity postUser(@RequestBody SysUser user) {
+		SysUser check = this.repository.findByUsername(user.getUsername());
+		if(check == null) {
+			this.repository.save(user);
+			return ResponseEntity.noContent().build();
+		} else
+			return ResponseEntity.notFound().build();
+			
+		
+	}
+
+}

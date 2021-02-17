@@ -1,0 +1,13 @@
+package com.teste.neliogodoi.fullstack.model;
+
+import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.web.bind.annotation.GetMapping;
+
+
+@FeignClient("https://jsonplaceholder.typicode.com/users")
+public interface UserService  {
+	
+	@GetMapping
+	String findUser();
+	
+}

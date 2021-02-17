@@ -1,0 +1,20 @@
+package com.teste.neliogodoi.fullstack.testes;
+
+import org.springframework.boot.test.context.TestConfiguration;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Primary;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.provisioning.InMemoryUserDetailsManager;
+
+import io.jsonwebtoken.lang.Arrays;
+
+@TestConfiguration
+public class TestingSecurityAux {
+
+    @Bean
+    @Primary
+    public UserDetailsService userDetailsService() {
+        
+    }
+}

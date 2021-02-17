@@ -1,0 +1,28 @@
+1613097798740	Move compilation unit
+1613098069598	Rename package 'com.teste.neliogodoi.fullstack.Provider'
+1613102600181	Rename type 'Usuario'
+1613103095154	Delete element
+1613103099379	Delete element
+1613103103151	Delete element
+1613103110338	Delete element
+1613103115757	Delete element
+1613143033528	Delete element
+1613143804639	Delete element
+1613143814161	Rename package 'com.teste.neliogodoi.fullstack.provider'
+1613143819795	Move compilation unit
+1613143834361	Rename type 'DividaRestController'
+1613143841794	Rename type 'SysUserRestController'
+1613143850082	Rename type 'UserRestController'
+1613144277125	Rename type 'DividaController'
+1613144299363	Rename type 'Divida'
+1613144314811	Rename type 'DividaRepository'
+1613150847092	Delete element
+1613150864796	Delete element
+1613150873422	Delete element
+1613150879592	Delete element
+1613157111317	Rename type 'UserCredentials'
+1613157194508	Delete element
+1613228296572	Rename type 'TestingTestDocsApp'
+1613228401313	Rename type 'TestingDividaController'
+1613235843158	Delete element
+1613240688401	Delete element

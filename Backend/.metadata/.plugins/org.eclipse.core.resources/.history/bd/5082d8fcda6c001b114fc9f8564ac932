@@ -1,0 +1,8 @@
+package com.teste.neliogodoi.fullstack.Provider;
+
+import com.fasterxml.jackson.databind.node.ObjectNode;
+
+public interface IUser {
+	public String getUser(long id);
+	public String getAllUsers();
+}

@@ -1,0 +1,7 @@
+package com.teste.neliogodoi.fullstack.model;
+
+
+public interface IUser {
+	public String getUser(long id);
+	public String getAllUsers();
+}
