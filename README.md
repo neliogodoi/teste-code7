@@ -1,36 +1,29 @@
 # Teste Prático Code7
 ## Este repositório contém os resultados de um teste prático promovido pela Code7
 
-## Backend
-
-#### Linguagens e Frameworks
-
+## Linguagens e Frameworks
+#### Backend
 * Java 8
 * Spring Boot 2x
 * Spring Security
 * Spring Data
-* MongoDb
+* MongoDB
 * JUnit
 
-
-## Frontend
-
-#### Linguagens e Frameworks
-
+#### Frontend
 * TypeScript
-* Angular 7
+* Angular
 * Bootstrap
 * Angular Material
 
+
 # Desenvolvimento
-
-## Backend
-
-* **IDE:** Spring Tools Suite (Eclipse)
-
-## Frontend
-
-* **Editor de Texto:** Visual Studio Code
+## Ambiente Utilizado:
+* Sistema Operacioanl: Linux Mint 19.3 Tricia
+* Memória RAM: 8GB
+* Placa de Video: NVidia 2GB
+* IDE Backend: Spring Tools Suite (Eclipse)
+* Editor de Texto Frontend: Visual Studio Code
 
 # Deploy
 
@@ -56,21 +49,21 @@ sudo apt install maven
 ```shell
 sudo apt install docker-compose
 ```
-**Subindo Banco de Dados:**
+#### Subindo Banco de Dados:
 
 ```shell
 cd Deploy/
 docker-compose -f database.yaml up
 ```
 
-**Compilando API:**
+#### Compilando API:
 
 ```shell
 cd Backend/api
 mvn clean install -DskipTests
 ```
 
-**Executando API:**
+#### Executando API:
 ```shell
 cd Backend/api/target
 java -jar fullstack-0.0.1-SNAPSHOT.jar
@@ -89,9 +82,26 @@ java -jar fullstack-0.0.1-SNAPSHOT.jar
 # Ao instalar o NPM ele automaticamente instala o NodeJS
 sudo apt install npm
 ```
-* Angular 7:
+* Angular CLI:
 ```shell
-sudo npm -g angular
+sudo npm -g @angular@cli
+```
+* Traspilador SASS
+```shell
+sudo npm install node-sass
+```
+#### Compilando Aplicação Angular
+```shell
+cd ./Frontend/debtmanager
+npm install --save-dev
+ng build --prod
+```
+#### Subindo Aplicação Angular
+
+```shell
+cd ./Frontend/debtmanager
+npm install --save-dev
+ng build --prod
 ```
 
 # Teste Ambiente Deployed
