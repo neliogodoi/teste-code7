@@ -1,6 +1,14 @@
 # Teste Prático Code7
 ## Vaga Desenvolvedor Fullstack
 
+## Ambiente de Desenvolvimento Utilizado:
+* Sistema Operacioanl: Linux Mint 19.3 Tricia
+* Memória RAM: 8GB
+* IDE Java: Spring Tools Suite (Eclipse)
+* Editor de Texto: Visual Studio Code
+
+*Assim sendo, todos os comando mostrados aqui são pra sistemas linux baseados em Debian*
+
 #### Clonando este projeto:
 ```shell
 git clone https://github.com/neliogodoi/teste-code7.git
@@ -21,14 +29,6 @@ cd teste-code7
 * Angular
 * Bootstrap
 * Angular Material
-
-
-# Desenvolvimento
-## Ambiente Utilizado:
-* Sistema Operacioanl: Linux Mint 19.3 Tricia
-* Memória RAM: 8GB
-* IDE Java: Spring Tools Suite (Eclipse)
-* Editor de Texto: Visual Studio Code
 
 # Dependencias:
 
