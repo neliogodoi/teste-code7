@@ -17,6 +17,7 @@ export class HomeComponent implements OnInit {
 	mostrarAppDebts = false;
 	mostrarListaDebts = false;
 	mostrarNavside = false;
+	mostrarBotaoMenu = true;
 
 	devedores: Debtor[];
 	devedor: Debtor;
@@ -29,8 +30,10 @@ export class HomeComponent implements OnInit {
 		private dividaService: DebtService,
 		private usuarioService: UsersService
 	) {
-		if(window.screen.width >= 720)
+		if(window.screen.width >= 720){
+			this.mostrarBotaoMenu = false;
 			this.mostrarNavside = true
+		}
 	}
 
 	ngOnInit() {
@@ -123,7 +126,11 @@ export class HomeComponent implements OnInit {
 	}
 
 	toogleNavside(){
-		this.mostrarNavside = !this.mostrarNavside;
+		if(window.screen.width >= 720){
+			this.mostrarNavside = true;
+		} else{
+			this.mostrarNavside = !this.mostrarNavside;
+		}
 	}
 
 }

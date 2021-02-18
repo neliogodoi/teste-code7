@@ -6,12 +6,14 @@ import { Injectable } from "@angular/core";
 export class HostConfig {
 
     protocol = "http";
-    domain  = "localhost"
+    domain  = window.location.host.split(":")[0];
     port = 8080;
 
     constructor(){}
 
     getHostUrl(){
-        return this.protocol + "://" + this.domain + ":" + this.port;
+        let url = this.protocol + "://" + this.domain + ":" + this.port;
+        
+        return url;
     }
 }

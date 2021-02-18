@@ -1,5 +1,5 @@
 <mat-toolbar color="primary">
-	<button mat-icon-button aria-label="Botao de icone 'menu'" (click)="toogleNavside()">
+	<button *ngIf="mostrarBotaoMenu" mat-icon-button aria-label="Botao de icone 'menu'" (click)="toogleNavside()">
 		<mat-icon>menu</mat-icon>
 	</button>
 	<span>Dividas de Usuários</span>
@@ -21,8 +21,8 @@
 				<mat-divider></mat-divider>
 			</mat-list-item>
 		</mat-list>
-		<p *ngIf="devedores === undefined">
-			<mat-icon mat-list-icon color="primary">paid</mat-icon>
+		<p *ngIf="devedores === undefined" class="no-debtors">
+			<mat-icon mat-list-icon color="primary"></mat-icon>
 		</p>
 	</mat-drawer>
 	<mat-drawer-content>

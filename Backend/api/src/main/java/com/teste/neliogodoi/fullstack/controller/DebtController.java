@@ -29,7 +29,7 @@ public class DebtController {
 	
 	@PostMapping
 	public ResponseEntity<Debt> saveDivida(@RequestBody Debt debt) {
-		if(debt.getValor() >= 0.01) {
+		if(this.validarDadosDeDivida(debt)) {
 			Debt saved = this.repository.save(debt);
 			if(saved != null)
 				return ResponseEntity.ok(saved);
@@ -77,6 +77,16 @@ public class DebtController {
 			return ResponseEntity.noContent().build();
 		} else
 			return ResponseEntity.notFound().build();
+	}
+	
+	private boolean validarDadosDeDivida(Debt debt){
+		if(debt.getValor() < 0.01)
+			return false;
+		if(debt.getIdUser() < 0 || debt.getId() == null)
+			return false;
+		if(debt.getMotivo().equals("") || debt.getMotivo() == null)
+			return false;
+		return true;
 	}
 
 }

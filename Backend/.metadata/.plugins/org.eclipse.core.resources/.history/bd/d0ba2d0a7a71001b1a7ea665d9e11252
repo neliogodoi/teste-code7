@@ -1,0 +1,111 @@
+package com.teste.neliogodoi.fullstack.testes;
+
+import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+
+import java.nio.charset.Charset;
+
+import org.junit.jupiter.api.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.http.MediaType;
+import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.MvcResult;
+import org.springframework.test.web.servlet.RequestBuilder;
+import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.teste.neliogodoi.fullstack.controller.DebtController;
+import com.teste.neliogodoi.fullstack.model.Debt;
+import com.teste.neliogodoi.fullstack.repository.DebtRepository;
+
+@RunWith(SpringRunner.class)
+@WebMvcTest(DebtController.class)
+class TestingDebtController {
+	
+	private String token;
+	
+	@Autowired
+	private MockMvc mvc;
+	
+	@MockBean
+	private DebtRepository  repository;
+	/*
+	 * Devido a este Mock todas as requisições de find e save no repository devem retornar NotFound
+	 */
+
+	@Test
+	void shouldReturnDefaultMessage() throws Exception {
+		RequestBuilder request = MockMvcRequestBuilders.get("/divida").header("Authorization", this.getToken());
+		this.mvc.perform(request)
+				.andDo(print())
+				.andExpect(status().isNotFound());
+	}
+	
+	@Test
+	void shouldReturnSaveDebt() throws Exception {
+		Debt debt = new Debt();
+		debt.setId(null);
+		debt.setIdUser(2);
+		debt.setMotivo("aquisition test");
+		debt.setValor(123.45);
+		debt.setData(1612550331);
+		
+		ObjectMapper mapper = new ObjectMapper();
+		String json = mapper.writeValueAsString(debt);		
+		RequestBuilder request = MockMvcRequestBuilders.post("/divida/nova")
+									.accept(MediaType.APPLICATION_JSON)
+									.contentType(MediaType.APPLICATION_JSON)
+									.content(json)
+									.header("Authorization", this.getToken());
+		
+		this.mvc.perform(request)
+				.andDo(print())
+				.andExpect(status().isNotFound());
+	}
+	
+	@Test
+	void shouldReturnGetDebt() throws Exception {
+		String idDebt = "6026f5c21b91481ccb1fd533";
+		RequestBuilder request = MockMvcRequestBuilders.get("/divida/"+idDebt)
+									.header("Authorization", this.getToken());
+		
+		this.mvc.perform(request)
+				.andDo(print())
+				.andExpect(status().isNotFound());
+	}
+	
+	@Test
+	void shouldReturnGetByUserDebts() throws Exception {
+		RequestBuilder request = MockMvcRequestBuilders.get("/divida/user/1")
+									.header("Authorization", this.getToken());
+		
+		this.mvc.perform(request)
+				.andDo(print())
+				.andExpect(status().isOk());
+	}
+	
+	private String getToken() {
+		if(this.token != null) {
+			return this.token;
+		} else {
+			String body = "{\"username\":\"admin\", \"password\":\"passwd\"}";
+			MvcResult result;
+			try {
+				result = this.mvc.perform(MockMvcRequestBuilders.post("/login")
+						.content(body))
+						.andExpect(status().isOk())
+						.andReturn();
+				String response = result.getResponse().getContentAsString();
+				this.token = response;
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			return this.token;
+		}
+	}
+}
