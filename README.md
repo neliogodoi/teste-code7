@@ -37,6 +37,10 @@ Em uma maquina rodando um SO baseado em Linux baseado em Debian como o Ubuntu / 
 
 **Dependencias:**
 
+* Certifique-se que o a biblioteca *'build-essential'* esteja instalada
+```shell
+sudo apt-get install -y build-essential
+```
 * Java 8:
 ```shell
 sudo apt install openjdk-8-jdk
