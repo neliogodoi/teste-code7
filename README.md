@@ -18,8 +18,8 @@ cd teste-code7
 
 ***Estas credenciais são apenas para efeito de autenticação na API. Em um ambiente real de produção elas não representão segurança!***
 
-Nome de Usuário: admin@admin
-Senha: passwd
+* **Nome de Usuário:** *admin@admin*
+* **Senha:** *passwd*
 
 # Linguagens e Frameworks
 #### Backend
