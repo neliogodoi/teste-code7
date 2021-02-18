@@ -1,7 +1,5 @@
 package com.teste.neliogodoi.fullstack.controller;
 
-import static org.hamcrest.CoreMatchers.nullValue;
-
 import java.util.List;
 import java.util.Optional;
 
@@ -84,7 +82,7 @@ public class DebtController {
 	private boolean validarDadosDeDivida(Debt debt){
 		if(debt.getValor() < 0.01)
 			return false;
-		if(debt.getIdUser() <= 0L)
+		if(debt.getId() == null)
 			return false;
 		if(debt.getMotivo().equals(""))
 			return false;

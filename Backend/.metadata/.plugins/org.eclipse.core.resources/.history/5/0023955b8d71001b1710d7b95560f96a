@@ -84,7 +84,7 @@ public class DebtController {
 	private boolean validarDadosDeDivida(Debt debt){
 		if(debt.getValor() < 0.01)
 			return false;
-		if(debt.getIdUser() <= 0L)
+		if(debt.getIdUser() < 0)
 			return false;
 		if(debt.getMotivo().equals(""))
 			return false;
