@@ -14,7 +14,7 @@
 git clone https://github.com/neliogodoi/teste-code7.git
 cd teste-code7
 ```
-#### Crendenciais da API
+#### Crendenciais utitlizadas pelo cliente através do Frontend
 
 ***Estas credenciais são apenas para efeito de autenticação na API. Em um ambiente real de produção elas não representão segurança!***
 
