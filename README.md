@@ -1,6 +1,12 @@
 # Teste Prático Code7
 ## Vaga Desenvolvedor Fullstack
 
+#### Clonando este projeto:
+```shell
+git clone <link deste projeto>
+cd teste-code7
+```
+
 # Linguagens e Frameworks
 #### Backend
 * Java 8
@@ -73,11 +79,6 @@ sudo apt install apache2
 ```
 # Compilação:
 
-#### Clonando projeto
-```shell
-git clone <link deste projeto>
-cd teste-code7
-```
 ### Rodando Testes API:
 ```shell
 mvn test
