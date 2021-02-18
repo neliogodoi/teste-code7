@@ -1,7 +1,7 @@
 # Teste Prático Code7
-## Este repositório contém os resultados de um teste prático promovido pela Code7
+## Vaga Desenvolvedor Fullstack
 
-## Linguagens e Frameworks
+# Linguagens e Frameworks
 #### Backend
 * Java 8
 * Spring Boot 2x
@@ -21,13 +21,12 @@
 ## Ambiente Utilizado:
 * Sistema Operacioanl: Linux Mint 19.3 Tricia
 * Memória RAM: 8GB
-* Placa de Video: NVidia 2GB
-* IDE Backend: Spring Tools Suite (Eclipse)
-* Editor de Texto Frontend: Visual Studio Code
+* IDE Java: Spring Tools Suite (Eclipse)
+* Editor de Texto: Visual Studio Code
 
 # Dependencias:
 
-**Desenvolvimento Backend:**:
+## Desenvolvimento Backend::
 
 * Biblioteca *'build-essential'*:
 ```shell
@@ -41,13 +40,13 @@ sudo apt install maven
 ```shell
 sudo apt install openjdk-8-jdk
 ```
-**Deploy Backend:**
+## Deploy Backend:
 * Java 8;
 * Docker Compose: 
 ```shell
 sudo apt install docker-compose
 ```
-**Desenvolvimento Frontend:**:
+## Desenvolvimento Frontend:
 
 * NodeJS e NPM (Gerenciador de pacotes Node):
 ```shell
@@ -66,7 +65,7 @@ sudo npm install node-sass
 ```shell
 sudo npm install jquery popper.js
 ```
-**Deploy Frontend:**
+## Deploy Frontend:
 
 * Servidor Web *Apache 2*:
 ```shell
@@ -78,6 +77,10 @@ sudo apt install apache2
 ```shell
 git clone <link deste projeto>
 cd teste-code7
+```
+### Rodando Testes API:
+```shell
+mvn test
 ```
 #### Compilando API:
 ```shell
@@ -94,21 +97,18 @@ ng build
 Em uma maquina rodando um Sistema Operacional Linux baseado em Debian como o Ubuntu / Ubuntu Server:
 
 ## Backend
-
 #### Subindo Banco de Dados:
-
 ```shell
 cd Deploy/
 docker-compose -f database.yaml up
 ```
-#### Executando API:
+#### Subindo API:
 ```shell
 cd Backend/api/target
 java -jar fullstack-0.0.1-SNAPSHOT.jar
 ```
 
 ## Frontend
-
 #### Subindo Aplicação Angular
 ```shell
 cp -r ./dist/* /var/www/html/
@@ -116,15 +116,15 @@ cp -r ./dist/* /var/www/html/
 
 # Deploy Fácil em Maquina 'Linux'
 
-Dentro deste projeto, existem arquivos previamente compilados, este médodo utiliza estes arquivos para fazer um Deploy facil das aplicações, no entanto as *"Dependências de Deploy"* ainda são necessárias:
+Dentro deste projeto, existem arquivos previamente compilados, este método utiliza estes arquivos para fazer um Deploy facil das aplicações, no entanto as *"Dependências de Deploy"* ainda são necessárias:
 
 ```shell
 chmod -x deploy.sh
 ./deploy.sh
 ```
 
-# Teste Aplicações Deployed
-Nste método o deploy das aplicações ja foi préviamente efetuado em uma maquina virtual hospedada no [DigitalOcean](https://www.digitalocean.com/):
+# Teste Deployed
+Neste método o deploy das aplicações ja foi préviamente efetuado em uma maquina virtual hospedada no [DigitalOcean](https://www.digitalocean.com/):
 
 * [Frontend](http://64.225.7.21/)
 * [Backend](http://64.225.7.21:8080)
