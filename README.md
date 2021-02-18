@@ -3,7 +3,7 @@
 
 #### Clonando este projeto:
 ```shell
-git clone <link deste projeto>
+git clone https://github.com/neliogodoi/teste-code7.git
 cd teste-code7
 ```
 
