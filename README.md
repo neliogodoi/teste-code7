@@ -14,6 +14,12 @@
 git clone https://github.com/neliogodoi/teste-code7.git
 cd teste-code7
 ```
+#### Crendenciais da API
+
+***Estas credenciais são apenas para efeito de autenticação na API. Em um ambiente real de produção elas não representão segurança!***
+
+Nome de Usuário: admin@admin
+Senha: passwd
 
 # Linguagens e Frameworks
 #### Backend
