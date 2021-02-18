@@ -41,31 +41,27 @@ Deleta uma divida pelo ID (deleteDivida)
 
 Remove um registro de divida da base dados
 
-### Path parameters {.field-label}
+### Path parameters
 
 id (required)
 
 Path Parameter — ID da divida
 
-### Produces {.field-label}
-
-This API call produces the following media types according to the Accept
-request header; the media type will be conveyed by the Content-Type
-response header.
+### Produces 
 
 -   `application/json`
 
-### Responses {.field-label}
+### Responses 
 
-#### 200 {.field-label}
+#### 200 
 
 Remoção efetuada com sucesso [](#)
 
-#### 400 {.field-label}
+#### 400
 
 Parametro diferente do requerido [](#)
 
-#### 404 {.field-label}
+#### 404 
 
 Usuário inexistente [](#)
 
@@ -81,35 +77,72 @@ Buscar todos os usuários (findAllUsers)
 
 Obtém todos os usuários registardos
 
-### Return type {.field-label}
+### Return type 
 
 array[[usuario](#usuario)]
 
-### Example data {.field-label}
+### Example data
 
 Content-Type: application/json
 
 ``` {.example}
-[ {
-  "name" : "name",
-  "id" : 0.80082819046101150206595775671303272247314453125
-}, {
-  "name" : "name",
-  "id" : 0.80082819046101150206595775671303272247314453125
-} ]
+[ 
+  {
+    "id": 1,
+    "name": "Leanne Graham",
+    "username": "Bret",
+    "email": "Sincere@april.biz",
+    "address": {
+      "street": "Kulas Light",
+      "suite": "Apt. 556",
+      "city": "Gwenborough",
+      "zipcode": "92998-3874",
+      "geo": {
+        "lat": "-37.3159",
+        "lng": "81.1496"
+      }
+    },
+    "phone": "1-770-736-8031 x56442",
+    "website": "hildegard.org",
+    "company": {
+      "name": "Romaguera-Crona",
+      "catchPhrase": "Multi-layered client-server neural-net",
+      "bs": "harness real-time e-markets"
+    }
+  },
+  {
+    "id": 2,
+    "name": "Ervin Howell",
+    "username": "Antonette",
+    "email": "Shanna@melissa.tv",
+    "address": {
+      "street": "Victor Plains",
+      "suite": "Suite 879",
+      "city": "Wisokyburgh",
+      "zipcode": "90566-7771",
+      "geo": {
+        "lat": "-43.9509",
+        "lng": "-34.4618"
+      }
+    },
+    "phone": "010-692-6593 x09125",
+    "website": "anastasia.net",
+    "company": {
+      "name": "Deckow-Crist",
+      "catchPhrase": "Proactive didactic contingency",
+      "bs": "synergize scalable supply-chains"
+    }
+  }
+]
 ```
 
-### Produces {.field-label}
-
-This API call produces the following media types according to the Accept
-request header; the media type will be conveyed by the Content-Type
-response header.
+### Produces 
 
 -   `application/json`
 
-### Responses {.field-label}
+### Responses
 
-#### 200 {.field-label}
+#### 200
 
 Retorna todos as informações de usuário
 
@@ -125,17 +158,17 @@ Buscar uma divida pelo ID (findDivida)
 
 Obtém um registro de divida
 
-### Path parameters {.field-label}
+### Path parameters
 
 id (required)
 
 Path Parameter — ID da divida
 
-### Return type {.field-label}
+### Return type
 
 Object
 
-### Example data {.field-label}
+### Example data
 
 Content-Type: application/json
 
@@ -149,25 +182,21 @@ Content-Type: application/json
 }
 ```
 
-### Produces {.field-label}
-
-This API call produces the following media types according to the Accept
-request header; the media type will be conveyed by the Content-Type
-response header.
+### Produces 
 
 -   `application/json`
 
-### Responses {.field-label}
+### Responses
 
-#### 200 {.field-label}
+#### 200
 
 Retorna as informações de uma divida [Object](#Object)
 
-#### 400 {.field-label}
+#### 400
 
 Parametro diferente do requerido [](#)
 
-#### 404 {.field-label}
+#### 404
 
 Usuário inexistente [](#)
 
@@ -183,17 +212,17 @@ Buscar todas as dividas de um usuário (findDividasByUserId)
 
 Obtém todos os registros de dividas de um usuário
 
-### Path parameters {.field-label}
+### Path parameters
 
 id (required)
 
 Path Parameter — ID do usuário
 
-### Return type {.field-label}
+### Return type
 
 array[[divida](#divida)]
 
-### Example data {.field-label}
+### Example data
 
 Content-Type: application/json
 
@@ -213,25 +242,21 @@ Content-Type: application/json
 } ]
 ```
 
-### Produces {.field-label}
-
-This API call produces the following media types according to the Accept
-request header; the media type will be conveyed by the Content-Type
-response header.
+### Produces 
 
 -   `application/json`
 
-### Responses {.field-label}
+### Responses
 
-#### 200 {.field-label}
+#### 200
 
 Retorna as informações de uma divida
 
-#### 400 {.field-label}
+#### 400
 
 Parametro diferente do requerido [](#)
 
-#### 404 {.field-label}
+#### 404
 
 Usuário inexistente [](#)
 
@@ -247,17 +272,17 @@ Buscar um usuário pelo ID (findUser)
 
 Obtém um usuário registardo
 
-### Path parameters {.field-label}
+### Path parameters
 
 id (required)
 
 Path Parameter — ID do usuário
 
-### Return type {.field-label}
+### Return type
 
 Object
 
-### Example data {.field-label}
+### Example data
 
 Content-Type: application/json
 
@@ -287,25 +312,21 @@ Content-Type: application/json
   }
 ```
 
-### Produces {.field-label}
-
-This API call produces the following media types according to the Accept
-request header; the media type will be conveyed by the Content-Type
-response header.
+### Produces
 
 -   `application/json`
 
-### Responses {.field-label}
+### Responses 
 
-#### 200 {.field-label}
+#### 200 
 
 Retorna as informações de um usuário [Object](#Object)
 
-#### 400 {.field-label}
+#### 400
 
 Parametro diferente do requerido [](#)
 
-#### 404 {.field-label}
+#### 404
 
 Usuário inexistente [](#)
 
@@ -321,17 +342,17 @@ Inserir uma nova divida (saveDivida)
 
 Insere um registro de divida
 
-### Request body {.field-label}
+### Request body
 
 json [object](#object) (required)
 
 Body Parameter — JSON da divida
 
-### Return type {.field-label}
+### Return type
 
 Object
 
-### Example data {.field-label}
+### Example data
 
 Content-Type: application/json
 
@@ -345,25 +366,21 @@ Content-Type: application/json
 }
 ```
 
-### Produces {.field-label}
-
-This API call produces the following media types according to the Accept
-request header; the media type will be conveyed by the Content-Type
-response header.
+### Produces
 
 -   `application/json`
 
-### Responses {.field-label}
+### Responses
 
-#### 200 {.field-label}
+#### 200 
 
 Retorna as informações da divida salva [Object](#Object)
 
-#### 400 {.field-label}
+#### 400 
 
 Parametro diferente do requerido [](#)
 
-#### 404 {.field-label}
+#### 404 
 
 Usuário inexistente [](#)
 
@@ -379,17 +396,17 @@ Atualizar uma divida (updateDivida)
 
 Atualiza um registro de divida
 
-### Request body {.field-label}
+### Request body 
 
 json [object](#object) (required)
 
 Body Parameter — JSON da divida
 
-### Return type {.field-label}
+### Return type 
 
 Object
 
-### Example data {.field-label}
+### Example data 
 
 Content-Type: application/json
 
@@ -403,21 +420,17 @@ Content-Type: application/json
 }
 ```
 
-### Produces {.field-label}
-
-This API call produces the following media types according to the Accept
-request header; the media type will be conveyed by the Content-Type
-response header.
+### Produces 
 
 -   `application/json`
 
-### Responses {.field-label}
+### Responses
 
-#### 200 {.field-label}
+#### 200 
 
 Retorna as informações da divida alterada [Object](#Object)
 
-#### 404 {.field-label}
+#### 404 
 
 Usuário inexistente [](#)
 
@@ -431,7 +444,6 @@ Models
 ### Table of Contents
 
 1.  [`divida` -](#divida)
-2.  [`usuario` -](#usuario)
 
 ### `divida` - [Up](#__Models)
 
