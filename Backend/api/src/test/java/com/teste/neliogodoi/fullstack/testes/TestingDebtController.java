@@ -115,7 +115,7 @@ class TestingDebtController {
 				.andExpect(status().isNotFound());
 	}
 	
-	// Neste caso o retorno e uma lista vazia "[]"
+
 	@Test
 	void shouldReturnGetByUserDebts() throws Exception {
 		RequestBuilder request = MockMvcRequestBuilders.get("/divida/devedor/1")
@@ -125,9 +125,7 @@ class TestingDebtController {
 				.andDo(print())
 				.andExpect(status().isNotFound());
 	}
-	
-
-	
+		
 	@Test
 	void shouldReturnDeleteDebt() throws Exception {
 		String idDebt = "6026f5c21b91481ccb1fd533";

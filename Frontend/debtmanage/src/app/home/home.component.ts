@@ -73,7 +73,10 @@ export class HomeComponent implements OnInit {
 	}
 
 	async listarDividasDeUsuario(idUser) {
-		this.mostrarListaDebts = true;
+		if(this.devedores.length === 0)
+			this.mostrarListaDebts = false;
+		else
+			this.mostrarListaDebts = true;
 		this.mostrarAppDebts = false;
 		if(this.mostrarNavside)
 			this.toogleNavside()

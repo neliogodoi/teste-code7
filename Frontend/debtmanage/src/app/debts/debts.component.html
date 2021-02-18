@@ -19,7 +19,7 @@
 			<div class="full-width">
 				<mat-form-field class="full-width">
 					<mat-label>Valor</mat-label>
-					<input [(ngModel)]="debt.valor" formControlName="valor" matInput placeholder="0,01" type="number" step="0.01">
+					<input [(ngModel)]="debt.valor" formControlName="valor" matInput placeholder="0,01" min="0.01" type="number" step="0.01">
 				</mat-form-field>
 			</div>
 			<div class="full-width">

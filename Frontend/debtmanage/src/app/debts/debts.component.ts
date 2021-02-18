@@ -29,7 +29,7 @@ export class DebtsComponent implements OnInit {
 		this.form = this.formBuilder.group({
 			user: ['', Validators.required],
 			motivo: ['', Validators.required],
-			valor: ['', Validators.required],
+			valor: ['', [Validators.required, Validators.min(0.01)]],
 			data: ['', Validators.required],
 		});
 	}
@@ -61,6 +61,8 @@ export class DebtsComponent implements OnInit {
 	saveDebt(debt: Debt){
 		this.debtService.saveDebt(debt).subscribe( debtData => {
 			this.evento.emit(Object(this.debt));
+		}, error => {
+			alert("confira os dados inseridos!");
 		});
 	}
 

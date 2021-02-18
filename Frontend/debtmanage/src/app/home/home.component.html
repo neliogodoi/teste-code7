@@ -21,8 +21,9 @@
 				<mat-divider></mat-divider>
 			</mat-list-item>
 		</mat-list>
-		<p *ngIf="devedores === undefined" class="no-debtors">
-			<mat-icon mat-list-icon color="primary"></mat-icon>
+		<p *ngIf="devedores === undefined || devedores.length === 0" class="no-debtors">
+			<mat-icon style="font-size: xx-large;" mat-list-icon color="primary">error_outline</mat-icon><br>
+			<span>Nenhuma dívida registrada!</span>
 		</p>
 	</mat-drawer>
 	<mat-drawer-content>

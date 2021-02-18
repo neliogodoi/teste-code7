@@ -38,7 +38,7 @@ public class TestingUserController {
 				.andExpect(status().isOk());
 	}
 	
-	// Neste caso o retorno e uma lista vazia "[]"
+	// Neste caso o retorno e uma string vazia ""
 	@Test
 	void shouldReturnGetUsers() throws Exception {
 		RequestBuilder request = MockMvcRequestBuilders.get("/usuario")
