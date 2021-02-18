@@ -32,7 +32,7 @@ cd teste-code7
 
 # Dependencias:
 
-## Desenvolvimento Backend::
+### Desenvolvimento Backend::
 
 * Biblioteca *'build-essential'*:
 ```shell
@@ -46,13 +46,13 @@ sudo apt install maven
 ```shell
 sudo apt install openjdk-8-jdk
 ```
-## Deploy Backend:
+### Deploy Backend:
 * Java 8;
 * Docker Compose: 
 ```shell
 sudo apt install docker-compose
 ```
-## Desenvolvimento Frontend:
+### Desenvolvimento Frontend:
 
 * NodeJS e NPM (Gerenciador de pacotes Node):
 ```shell
@@ -71,7 +71,7 @@ sudo npm install node-sass
 ```shell
 sudo npm install jquery popper.js
 ```
-## Deploy Frontend:
+### Deploy Frontend:
 
 * Servidor Web *Apache 2*:
 ```shell
