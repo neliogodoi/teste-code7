@@ -138,11 +138,12 @@ sudo rm -rf /var/www/html/*
 cd ../Frontend
 cp debtmanage.zip /var/www/html/
 cd /var/www/html
-unzip debtmanage.zip
 
-# Unzip é utilizado prara descompactar o arquivo. Você pode usar outro descompactador de sua preferência!
+# Unzip é utilizado para descompactar o arquivo. Você pode usar outro descompactador de sua preferência!
 # Caso queira utiliza-lo o seguinte comando instala-o.
 # sudo apt install unzip 
+
+unzip debtmanage.zip
 ```
 
 # Teste Deployed
