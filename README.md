@@ -91,6 +91,7 @@ sudo apt install npm
 sudo npm -g @angular@cli
 ```
 * Traspilador SASS
+<<<<<<< HEAD
 ```shell
 sudo npm install node-sass
 ```
@@ -103,6 +104,20 @@ ng build --prod
 #### Subindo Aplicação Angular
 
 ```shell
+=======
+```shell
+sudo npm install node-sass
+```
+#### Compilando Aplicação Angular
+```shell
+cd ./Frontend/debtmanager
+npm install --save-dev
+ng build --prod
+```
+#### Subindo Aplicação Angular
+
+```shell
+>>>>>>> a01096c86fc7e17a80518657bd9de5086e57fb2e
 cd ./Frontend/debtmanager
 npm install --save-dev
 ng build --prod
