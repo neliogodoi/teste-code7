@@ -1,7 +1,5 @@
 package com.teste.neliogodoi.fullstack.controller;
 
-import static org.hamcrest.CoreMatchers.nullValue;
-
 import java.util.List;
 import java.util.Optional;
 

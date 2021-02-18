@@ -4029,3 +4029,13 @@ Caused by: java.lang.ClassNotFoundException: org.springframework.boot.web.server
 2021-02-17 23:03:08.616  INFO 15250 --- [http-nio-8080-exec-7] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:4, serverValue:42}] to localhost:27017
 2021-02-17 23:03:08.616  INFO 15250 --- [http-nio-8080-exec-9] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:3, serverValue:40}] to localhost:27017
 2021-02-17 23:03:08.617  INFO 15250 --- [http-nio-8080-exec-5] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:6, serverValue:37}] to localhost:27017
+2021-02-17 23:05:21.373  INFO 15250 --- [RMI TCP Connection(5)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2021-02-17 23:05:21.381  INFO 15250 --- [RMI TCP Connection(5)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2021-02-17 23:05:21.382  INFO 15250 --- [RMI TCP Connection(5)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2021-02-17 23:05:21.387  INFO 15250 --- [RMI TCP Connection(5)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-02-17 23:05:21.392  INFO 15250 --- [RMI TCP Connection(5)-127.0.0.1] org.mongodb.driver.connection            : Closed connection [connectionId{localValue:8, serverValue:39}] to localhost:27017 because the pool has been closed.
+2021-02-17 23:05:21.392  INFO 15250 --- [RMI TCP Connection(5)-127.0.0.1] org.mongodb.driver.connection            : Closed connection [connectionId{localValue:4, serverValue:42}] to localhost:27017 because the pool has been closed.
+2021-02-17 23:05:21.393  INFO 15250 --- [RMI TCP Connection(5)-127.0.0.1] org.mongodb.driver.connection            : Closed connection [connectionId{localValue:3, serverValue:40}] to localhost:27017 because the pool has been closed.
+2021-02-17 23:05:21.393  INFO 15250 --- [RMI TCP Connection(5)-127.0.0.1] org.mongodb.driver.connection            : Closed connection [connectionId{localValue:7, serverValue:38}] to localhost:27017 because the pool has been closed.
+2021-02-17 23:05:21.393  INFO 15250 --- [RMI TCP Connection(5)-127.0.0.1] org.mongodb.driver.connection            : Closed connection [connectionId{localValue:5, serverValue:41}] to localhost:27017 because the pool has been closed.
+2021-02-17 23:05:21.393  INFO 15250 --- [RMI TCP Connection(5)-127.0.0.1] org.mongodb.driver.connection            : Closed connection [connectionId{localValue:6, serverValue:37}] to localhost:27017 because the pool has been closed.
