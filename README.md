@@ -119,8 +119,29 @@ cp -r ./dist/* /var/www/html/
 Dentro deste projeto, existem arquivos previamente compilados, este método utiliza estes arquivos para fazer um Deploy facil das aplicações, no entanto as *"Dependências de Deploy"* ainda são necessárias:
 
 ```shell
-chmod -x deploy.sh
-./deploy.sh
+# Subindo Banco de Dados
+
+cd ./DataBase
+docker-compose -f database.yaml up &
+
+# Subindo API
+
+cd ../Backend
+java -jar api-1.0.jar &
+
+# Subindo Aplicacao Java
+# ATENCAO: O comando a seguir deleta todo o conteúdo do diretório '/var/www/html'
+# Certifique-se fazer um backup antes de executa-lo, caso seja necessario.
+
+sudo rm -rf /var/www/html/*
+cd ../Frontend
+cp debtmanage.zip /var/www/html/
+cd /var/www/html
+unzip debtmanage.zip
+
+# Unzip é utilizado prara descompactar o arquivo. Você pode usar outro descompactador de sua preferência!
+# Caso queira utiliza-lo o seguinte comando instala-o.
+# sudo apt install unzip 
 ```
 
 # Teste Deployed
